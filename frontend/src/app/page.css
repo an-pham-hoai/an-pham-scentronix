@@ -1,0 +1,41 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* Left section (monkey image) */
+.navbar-left .monkey-logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Right section (links) */
+.navbar-right .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-right .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-right .nav-links li a:hover {
+    color: #0070f3;
+    /* Change link color on hover */
+}

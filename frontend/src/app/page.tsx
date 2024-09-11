@@ -1,101 +1,105 @@
+"use client";
+
+import { AppBar, Box, Button, Card, CardContent, IconButton, MenuItem, Toolbar, Typography } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
 import Image from "next/image";
+import Link from 'next/link';
+import { useState } from "react";
+import './page.css'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleMenuOpen = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div>
+
+      <nav className="navbar flex flex-col items-center p-6">
+
+        <div className="navbar2 w-full max-w-4xl text-center my-8">
+          <div className="navbar-left">
+            <img
+              src="/images/monkey.png"
+              alt="Monkey Logo"
+              className="monkey-logo"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+
+          <div className="navbar-right">
+            <ul className="nav-links">
+              <li><a href="#shop">Shop</a></li>
+              <li><a href="#recipes">Recipes</a></li>
+              <li><a href="#learn">Learn</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      </nav>
+
+      <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+
+
+        {/* Main Content */}
+        <div className="w-full max-w-4xl flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden">
+
+          {/* Details Section */}
+          <div className="md:w-1/2 p-6">
+
+            {/* Header */}
+            <header className="w-full max-w-4xl text-center my-8">
+              <h1 className="text-4xl font-bold text-gray-800">Whole-Grain Banana Bread</h1>
+              <p className="text-gray-600 mt-4">
+                This one-bowl banana bread — our <a href="#" className="text-blue-600 underline">2018 Recipe of the Year</a> — uses the simplest ingredients, but is incredibly moist and flavorful.
+              </p>
+            </header>
+
+            <div className="mb-4">
+              <h2 className="text-xl font-semibold">Preparation Time</h2>
+              <ul className="list-none text-gray-600 mt-2">
+                <li><strong>Prep:</strong> 10 mins</li>
+                <li><strong>Bake:</strong> 1 hr to 1 hr 15 mins</li>
+                <li><strong>Total:</strong> 1 hr 10 mins</li>
+              </ul>
+            </div>
+
+            <div className="mb-4">
+              <h2 className="text-xl font-semibold">Yield</h2>
+              <p className="text-gray-600">1 loaf, 12 generous servings</p>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex space-x-4 mt-6">
+              <Button variant="outlined" color="primary">Save Recipe</Button>
+              <Button variant="outlined" color="secondary">Print</Button>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="md:w-1/2">
+            <img
+              src="/images/bread.png"
+              alt="Banana Bread"
+              className="object-cover w-full h-full"
+            />
+          </div>
+
+
+        </div>
+      </div>
+
     </div>
+
   );
 }
