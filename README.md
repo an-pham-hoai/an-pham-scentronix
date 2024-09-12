@@ -1,9 +1,9 @@
 # an-pham-scentronix
 
 ## How to install dependencies
-- Go to your `root` folder (same level as frontend and backend) and run: ```bash npm i```
-- Go to `frontend` folder and run: ```bash npm i```
-- Go to `backend` folder and run: ```bash npm i```
+- Go to your `root` folder (same level as frontend and backend) and run: ```npm i```
+- Go to `frontend` folder and run: ```npm i```
+- Go to `backend` folder and run: ```npm i```
 
 ## Build your Next.js application
 - Go to `frontend` folder and run:
