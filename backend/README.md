@@ -4,13 +4,13 @@
 - The NestJS backend will run on http://localhost:3001 (you can configure the port in the .env file).
 
 ## Project setup
-
+- Go to `backend` folder and run:
 ```bash
 $ npm install
 ```
 
 ## Run the project
-
+- Go to `backend` folder and run:
 ```bash
 # development
 $ npm run start
@@ -23,7 +23,7 @@ $ npm run start:prod
 ```
 
 ## Run tests
-
+- Go to `backend` folder and run:
 ```bash
 # unit tests
 $ npm run test
