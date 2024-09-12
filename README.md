@@ -17,8 +17,25 @@ npm run build
 ```bash
 npm run dev
 ```
-    - The Next.js frontend will run on http://localhost:3000.
-    - The NestJS backend will run on http://localhost:3001 (you can configure the port in the backend/src/main.ts).
+    - The Next.js frontend will run on http://localhost:3000 (you can configure the port in the .env file)
+    - The NestJS backend will run on http://localhost:3001 (you can configure the port in the .env file)
+
+## End points
+- Access `http://localhost:3000` to test frontend
+- Access `http://localhost:3001/find` to test backend `findServer` method
+
+## Run Tests
+- Go to `backend` folder and run:
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
 
 ## Trouble shooting
 ### EADDRINUSE: address already in use
@@ -50,7 +67,7 @@ If you don't want to terminate the existing process, you can change the port in 
 
 You can set the port using an environment variable:
 
-In `.env` file, update the port to new value:
+In `.env` file, update the port to new value, for ex, `3002`:
    ```bash
    PORT=3002
    ```
